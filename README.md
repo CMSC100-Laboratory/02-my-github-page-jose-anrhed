@@ -1,8 +1,9 @@
+[] README.md Draft
 Exercise #2
-
 Jose Anrhed G. Pesimo
 BS Computer Science 
-
+Live Website Link: https://cmsc100-laboratory.github.io/02-my-github-page-jose-anrhed/
+Steps on how to create GitHub page:
 My personal takeaways:
 
 References:

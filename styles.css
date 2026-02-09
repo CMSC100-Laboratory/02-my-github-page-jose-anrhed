@@ -70,7 +70,6 @@ nav:hover {
         0 2px 10px rgba(0, 0, 0, 0.5),
         2px 2px 0 rgba(0, 0, 0, 0.3);
 }
-
 /* Container for my nav links on the right */
 .nav-right {
     display: flex;
@@ -166,6 +165,22 @@ nav:hover {
     box-shadow: none;
     border: none;
     background: transparent;
+    opacity: 1;
+}
+
+.flower-decoration {
+    position: absolute;
+    top: 13%;
+    right: 24.5%;
+    z-index: 2;
+    width: 120px;
+    height: auto;
+}
+
+.pixel-flower {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     opacity: 1;
 }
 

@@ -22,3 +22,9 @@ BS Computer Science
 ## References:
 [CMSC 100 Exercise Documentation]
 https://docs.google.com/document/d/1t0HGpzPcYECQgn7H3bLUmSoWze8L5sFYnt_3rCcPPvQ/edit?tab=t.0
+
+https://www.shutterstock.com/image-vector/8bit-pixel-art-game-level-background-2601622909
+
+https://www.shutterstock.com/image-vector/pixel-background-palm-trees-sand-water-2642754319?trackingId=a0220573-7df7-4733-be3b-3abd33766541&listId=searchResults&dd_referrer=https%3A%2F%2Fclaude.ai%2F
+
+https://www.shutterstock.com/image-vector/pixel-clouds-set-game-background-fluffy-2638798949

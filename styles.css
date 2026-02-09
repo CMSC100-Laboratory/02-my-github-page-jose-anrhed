@@ -124,9 +124,9 @@ nav:hover {
 
 /* The main card in the intro - I positioned it lower so the beach photo fits */
 .intro-content {
-    background: rgba(77, 208, 225, 0.2);
-    backdrop-filter: blur(40px) saturate(180%);
-    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    background: rgba(77, 208, 225, 0.15);
+    backdrop-filter: blur(25px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
     padding: 50px 70px;
     border-radius: 25px;
     max-width: 850px;
@@ -173,7 +173,7 @@ nav:hover {
 .intro-content h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 80px;
-    margin-bottom: 15px;
+    margin-bottom: 3px;
     font-weight: 400;
     letter-spacing: 5px;
     text-shadow: 

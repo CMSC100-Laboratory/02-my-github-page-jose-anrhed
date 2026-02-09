@@ -1,0 +1,722 @@
+/* CSS Stylesheet for Portfolio Website
+   Author: Jose Anrhed Pesimo
+   This file contains all styling for my personal portfolio page
+   Created for CMSC 100 Exercise 02 */
+
+/* I'm resetting the default margins and paddings here so everything starts clean */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* I set the main font to Lora and made scrolling smooth for better UX */
+body {
+    font-family: 'Lora', serif;
+    scroll-behavior: smooth;
+    background-color: #0a0a0a;
+}
+
+/* My navigation bar - I made it float at the top with a glass effect */
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    z-index: 1000;
+    
+    /* I used backdrop-filter for the glass morphism look */
+    background: rgba(77, 208, 225, 0.15);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    
+    /* Rounded corners make it look cleaner */
+    border-radius: 20px;
+    border: 2px solid rgba(77, 208, 225, 0.3);
+    
+    /* Shadow gives it depth */
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    
+    padding: 15px 30px;
+    transition: all 0.3s ease;
+}
+
+/* When you hover over nav, it gets slightly brighter */
+nav:hover {
+    background: rgba(77, 208, 225, 0.2);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* I used flexbox to arrange nav items horizontally */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* The location text on the left side */
+.nav-left {
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.5),
+        2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Container for my nav links on the right */
+.nav-right {
+    display: flex;
+    gap: 35px;
+}
+
+/* Styling for each navigation link */
+.nav-right a {
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.5),
+        2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* My nav links glow cyan when you hover */
+.nav-right a:hover {
+    color: #4dd0e1;
+    text-shadow: 
+        0 0 20px rgba(77, 208, 225, 1),
+        0 2px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+/* This is my hero section - full screen intro page */
+.intro-section {
+    background-image: url('assets/gif/intro_movement.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Backup image in case the GIF doesn't load */
+.intro-section.static-bg {
+    background-image: url('assets/backgrounds/intro_background.png');
+}
+
+/* The main card in the intro - I positioned it lower so the beach photo fits */
+.intro-content {
+    background: rgba(77, 208, 225, 0.2);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    padding: 50px 70px;
+    border-radius: 25px;
+    max-width: 850px;
+    border: 3px solid rgba(77, 208, 225, 0.4);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 0 80px rgba(77, 208, 225, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* I used absolute positioning to place it exactly where I want */
+    position: absolute;
+    top: 21%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Container for my beach photo - positioned to overlap the pane */
+.beach-photos-container {
+    position: absolute;
+    top: 70.5%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 550px;
+    height: auto;
+}
+
+/* The beach photo itself - no effects, just clean image */
+.beach-photo-combined {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    opacity: 1;
+}
+
+/* My name in big pixel font */
+.intro-content h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 80px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.7),
+        3px 3px 0 rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+/* My title/role underneath */
+.intro-content p {
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    margin-bottom: 0;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 
+        0 3px 15px rgba(0, 0, 0, 0.7),
+        2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* The bouncing arrow at the bottom - tells people to scroll */
+.scroll-indicator {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounceArrow 2s infinite;
+    z-index: 5;
+}
+
+/* I used ::after to create the arrow symbol */
+.scroll-indicator::after {
+    content: '↓';
+    font-size: 40px;
+    color: white;
+    text-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.7),
+        2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Animation I made for the bouncing arrow */
+@keyframes bounceArrow {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+/* These are some animations I might use later */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* About me section - using the same background as intro */
+.about-section {
+    background-image: url('assets/backgrounds/intro_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 100px 40px 40px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-container {
+    max-width: 950px;
+    background: rgba(77, 208, 225, 0.15);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border-radius: 25px;
+    padding: 30px 35px;
+    border: 2px solid rgba(77, 208, 225, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* The "about me" heading */
+.about-container h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-shadow: 
+        0 3px 15px rgba(0, 0, 0, 0.7),
+        3px 3px 0 rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-style: italic;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+/* Left side has my photo and third paragraph */
+.about-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.about-photo-container {
+    width: 100%;
+}
+
+/* My profile photo styling */
+.about-photo {
+    width: 100%;
+    height: 280px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.5),
+        0 0 0 2px rgba(77, 208, 225, 0.5);
+}
+
+/* Right side with first two paragraphs */
+.about-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Paragraphs in the right column */
+.about-text-right p {
+    color: #ffffff;
+    line-height: 1.7;
+    font-size: 16px;
+    font-weight: 500;
+    text-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.7),
+        1px 1px 0 rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+/* My signature at the bottom - fancy cursive font */
+.signature {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 28px;
+    color: #ffffff;
+    font-style: italic;
+    text-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.7),
+        2px 2px 0 rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+/* Skills section - same background as about */
+.skills-section {
+    background-image: url('assets/backgrounds/intro_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 80px 40px 60px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-container {
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Skills heading */
+.skills-container h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 35px;
+    line-height: 1.6;
+    text-shadow: 
+        0 3px 15px rgba(0, 0, 0, 0.7),
+        3px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Grid layout for skill card */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+/* Each skill card with glass effect */
+.skill-card {
+    background: rgba(77, 208, 225, 0.15);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 15px;
+    padding: 16px 20px;
+    border: 2px solid rgba(77, 208, 225, 0.3);
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Card lifts up when you hover */
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: rgba(77, 208, 225, 0.25);
+    box-shadow: 
+        0 8px 30px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* The skill name text*/
+.skill-name {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    text-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.7),
+        2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Star rating */
+.skill-rating {
+    color: #ffd700;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-shadow: 
+        0 0 15px rgba(255, 215, 0, 0.8),
+        0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Projects section with different background */
+.projects-section {
+    background-image: url('assets/backgrounds/project_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 120px 40px 60px 40px;
+}
+
+/* Container for all my projects */
+.projects-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Projects section heading */
+.projects-container h2 {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 60px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-shadow: 
+        0 3px 15px rgba(0, 0, 0, 0.7),
+        3px 3px 0 rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+}
+
+/* I used flexbox here to center the cards */
+.projects-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Individual project card */
+.project-card {
+    background: rgba(77, 208, 225, 0.15);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border-radius: 25px;
+    padding: 25px;
+    width: 380px;
+    border: 2px solid rgba(77, 208, 225, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.37),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Cool hover effect - card lifts and scales up a bit */
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(77, 208, 225, 0.25);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(77, 208, 225, 0.5);
+}
+
+/* Placeholder for project images - will add real images later */
+.project-image {
+    width: 100%;
+    height: 220px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    font-weight: 700;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.7),
+        1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* When I add actual images, they'll fill this container */
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Project title */
+.project-card h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 
+        0 3px 10px rgba(0, 0, 0, 0.7),
+        2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Project description text */
+.project-card p {
+    font-family: 'Lora', serif;
+    color: #ffffff;
+    line-height: 1.7;
+    font-size: 15px;
+    text-align: left;
+    font-weight: 500;
+    text-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.7),
+        1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Container for technology tags */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+/* Individual tech tag - like little badges */
+.tech-tag {
+    background: rgba(77, 208, 225, 0.25);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    border: 2px solid rgba(77, 208, 225, 0.4);
+    transition: all 0.3s ease;
+    text-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.7),
+        1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Tags light up on hover */
+.tech-tag:hover {
+    background: rgba(77, 208, 225, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(77, 208, 225, 0.5);
+}
+
+/* Footer section */
+footer {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid rgba(77, 208, 225, 0.3);
+}
+
+/* Footer heading */
+footer h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #ffffff;
+    text-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.7),
+        2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Footer text */
+footer p {
+    font-family: 'Lora', serif;
+    margin: 8px 0;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 500;
+}
+
+/* Links in footer */
+footer a {
+    color: #4dd0e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 700;
+}
+
+/* Links glow on hover */
+footer a:hover {
+    text-shadow: 0 0 15px rgba(77, 208, 225, 1);
+}
+
+/* My philosophy section */
+.philosophy {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(77, 208, 225, 0.3);
+}
+
+/* Philosophy heading */
+.philosophy h4 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: #4dd0e1;
+    letter-spacing: 1px;
+    text-shadow: 
+        0 0 15px rgba(77, 208, 225, 0.8),
+        0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* The quote itself */
+.philosophy blockquote {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    font-size: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Quote attribution */
+.philosophy cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: normal;
+}
+
+/* Back to top section */
+.back-to-top {
+    margin-top: 25px;
+}
+
+/* Back to top button */
+.back-to-top a {
+    font-family: 'Press Start 2P', cursive;
+    background: rgba(77, 208, 225, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 12px 24px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    display: inline-block;
+    border: 2px solid rgba(77, 208, 225, 0.4);
+    transition: all 0.3s ease;
+    text-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.7),
+        1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Button lifts on hover */
+.back-to-top a:hover {
+    background: rgba(77, 208, 225, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(77, 208, 225, 0.5);
+}

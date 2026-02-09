@@ -277,7 +277,7 @@ nav:hover {
     background-position: center;
     background-attachment: fixed;
     min-height: 100vh;
-    padding: 100px 40px 40px 40px;
+    padding: 100px 20px 0px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -379,7 +379,7 @@ nav:hover {
     background-position: center;
     background-attachment: fixed;
     min-height: 100vh;
-    padding: 80px 40px 60px 40px;
+    padding: 0px 40px 60px 40px;
     display: flex;
     align-items: center;
     justify-content: center;
